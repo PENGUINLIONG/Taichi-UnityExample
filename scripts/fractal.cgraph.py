@@ -40,18 +40,3 @@ graph = gb.compile()
 mod = ti.aot.Module(ti.vulkan)
 mod.add_graph('fractal', graph)
 mod.archive("Assets/Resources/TaichiModules/fractal.cgraph.tcm")
-
-gui = ti.GUI("Julia Set", res=(n * 2, n))
-
-i = 0
-while True:
-    i += 1
-    args = {
-        "t": 0.03 * i,
-        "canvas": canvas,
-    }
-    canvas2 = np.repeat(canvas.to_numpy().reshape(n * 2,n,1), 3, 2)
-
-    graph.run(args)
-    gui.set_image(canvas2)
-    gui.show()

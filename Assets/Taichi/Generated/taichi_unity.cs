@@ -10,6 +10,12 @@ public struct TixNativeBufferUnity {
   public IntPtr Inner;
 }
 
+// callback.async_task
+[StructLayout(LayoutKind.Sequential)]
+public struct TixAsyncTaskUnity {
+  public IntPtr Inner;
+}
+
 // function.import_native_runtime
 static partial class Ffi {
 #if (UNITY_IOS || UNITY_TVOS || UNITY_WEBGL) && !UNITY_EDITOR
@@ -26,6 +32,228 @@ public static TiRuntime TixImportNativeRuntimeUnity(
   var rv = tix_import_native_runtime_unity(
   );
   return rv;
+}
+}
+
+// function.enqueue_task_async
+static partial class Ffi {
+#if (UNITY_IOS || UNITY_TVOS || UNITY_WEBGL) && !UNITY_EDITOR
+    [DllImport ("__Internal")]
+#else
+    [DllImport("taichi_unity")]
+#endif
+private static extern void tix_enqueue_task_async_unity(
+  [MarshalAs(UnmanagedType.LPArray)] byte[] user_data,
+  TixAsyncTaskUnity async_task
+);
+public static void TixEnqueueTaskAsyncUnity(
+  byte[] user_data,
+  TixAsyncTaskUnity async_task
+) {
+  tix_enqueue_task_async_unity(
+    user_data,
+    async_task
+  );
+}
+}
+static partial class Ffi {
+#if (UNITY_IOS || UNITY_TVOS || UNITY_WEBGL) && !UNITY_EDITOR
+    [DllImport ("__Internal")]
+#else
+    [DllImport("taichi_unity")]
+#endif
+private static extern void tix_enqueue_task_async_unity(
+  [MarshalAs(UnmanagedType.LPArray)] sbyte[] user_data,
+  TixAsyncTaskUnity async_task
+);
+public static void TixEnqueueTaskAsyncUnity(
+  sbyte[] user_data,
+  TixAsyncTaskUnity async_task
+) {
+  tix_enqueue_task_async_unity(
+    user_data,
+    async_task
+  );
+}
+}
+static partial class Ffi {
+#if (UNITY_IOS || UNITY_TVOS || UNITY_WEBGL) && !UNITY_EDITOR
+    [DllImport ("__Internal")]
+#else
+    [DllImport("taichi_unity")]
+#endif
+private static extern void tix_enqueue_task_async_unity(
+  [MarshalAs(UnmanagedType.LPArray)] short[] user_data,
+  TixAsyncTaskUnity async_task
+);
+public static void TixEnqueueTaskAsyncUnity(
+  short[] user_data,
+  TixAsyncTaskUnity async_task
+) {
+  tix_enqueue_task_async_unity(
+    user_data,
+    async_task
+  );
+}
+}
+static partial class Ffi {
+#if (UNITY_IOS || UNITY_TVOS || UNITY_WEBGL) && !UNITY_EDITOR
+    [DllImport ("__Internal")]
+#else
+    [DllImport("taichi_unity")]
+#endif
+private static extern void tix_enqueue_task_async_unity(
+  [MarshalAs(UnmanagedType.LPArray)] ushort[] user_data,
+  TixAsyncTaskUnity async_task
+);
+public static void TixEnqueueTaskAsyncUnity(
+  ushort[] user_data,
+  TixAsyncTaskUnity async_task
+) {
+  tix_enqueue_task_async_unity(
+    user_data,
+    async_task
+  );
+}
+}
+static partial class Ffi {
+#if (UNITY_IOS || UNITY_TVOS || UNITY_WEBGL) && !UNITY_EDITOR
+    [DllImport ("__Internal")]
+#else
+    [DllImport("taichi_unity")]
+#endif
+private static extern void tix_enqueue_task_async_unity(
+  [MarshalAs(UnmanagedType.LPArray)] int[] user_data,
+  TixAsyncTaskUnity async_task
+);
+public static void TixEnqueueTaskAsyncUnity(
+  int[] user_data,
+  TixAsyncTaskUnity async_task
+) {
+  tix_enqueue_task_async_unity(
+    user_data,
+    async_task
+  );
+}
+}
+static partial class Ffi {
+#if (UNITY_IOS || UNITY_TVOS || UNITY_WEBGL) && !UNITY_EDITOR
+    [DllImport ("__Internal")]
+#else
+    [DllImport("taichi_unity")]
+#endif
+private static extern void tix_enqueue_task_async_unity(
+  [MarshalAs(UnmanagedType.LPArray)] uint[] user_data,
+  TixAsyncTaskUnity async_task
+);
+public static void TixEnqueueTaskAsyncUnity(
+  uint[] user_data,
+  TixAsyncTaskUnity async_task
+) {
+  tix_enqueue_task_async_unity(
+    user_data,
+    async_task
+  );
+}
+}
+static partial class Ffi {
+#if (UNITY_IOS || UNITY_TVOS || UNITY_WEBGL) && !UNITY_EDITOR
+    [DllImport ("__Internal")]
+#else
+    [DllImport("taichi_unity")]
+#endif
+private static extern void tix_enqueue_task_async_unity(
+  [MarshalAs(UnmanagedType.LPArray)] long[] user_data,
+  TixAsyncTaskUnity async_task
+);
+public static void TixEnqueueTaskAsyncUnity(
+  long[] user_data,
+  TixAsyncTaskUnity async_task
+) {
+  tix_enqueue_task_async_unity(
+    user_data,
+    async_task
+  );
+}
+}
+static partial class Ffi {
+#if (UNITY_IOS || UNITY_TVOS || UNITY_WEBGL) && !UNITY_EDITOR
+    [DllImport ("__Internal")]
+#else
+    [DllImport("taichi_unity")]
+#endif
+private static extern void tix_enqueue_task_async_unity(
+  [MarshalAs(UnmanagedType.LPArray)] ulong[] user_data,
+  TixAsyncTaskUnity async_task
+);
+public static void TixEnqueueTaskAsyncUnity(
+  ulong[] user_data,
+  TixAsyncTaskUnity async_task
+) {
+  tix_enqueue_task_async_unity(
+    user_data,
+    async_task
+  );
+}
+}
+static partial class Ffi {
+#if (UNITY_IOS || UNITY_TVOS || UNITY_WEBGL) && !UNITY_EDITOR
+    [DllImport ("__Internal")]
+#else
+    [DllImport("taichi_unity")]
+#endif
+private static extern void tix_enqueue_task_async_unity(
+  [MarshalAs(UnmanagedType.LPArray)] IntPtr[] user_data,
+  TixAsyncTaskUnity async_task
+);
+public static void TixEnqueueTaskAsyncUnity(
+  IntPtr[] user_data,
+  TixAsyncTaskUnity async_task
+) {
+  tix_enqueue_task_async_unity(
+    user_data,
+    async_task
+  );
+}
+}
+static partial class Ffi {
+#if (UNITY_IOS || UNITY_TVOS || UNITY_WEBGL) && !UNITY_EDITOR
+    [DllImport ("__Internal")]
+#else
+    [DllImport("taichi_unity")]
+#endif
+private static extern void tix_enqueue_task_async_unity(
+  [MarshalAs(UnmanagedType.LPArray)] float[] user_data,
+  TixAsyncTaskUnity async_task
+);
+public static void TixEnqueueTaskAsyncUnity(
+  float[] user_data,
+  TixAsyncTaskUnity async_task
+) {
+  tix_enqueue_task_async_unity(
+    user_data,
+    async_task
+  );
+}
+}
+static partial class Ffi {
+#if (UNITY_IOS || UNITY_TVOS || UNITY_WEBGL) && !UNITY_EDITOR
+    [DllImport ("__Internal")]
+#else
+    [DllImport("taichi_unity")]
+#endif
+private static extern void tix_enqueue_task_async_unity(
+  [MarshalAs(UnmanagedType.LPArray)] double[] user_data,
+  TixAsyncTaskUnity async_task
+);
+public static void TixEnqueueTaskAsyncUnity(
+  double[] user_data,
+  TixAsyncTaskUnity async_task
+) {
+  tix_enqueue_task_async_unity(
+    user_data,
+    async_task
+  );
 }
 }
 
@@ -96,7 +324,7 @@ private static extern void tix_copy_memory_to_native_buffer_async_unity(
   TiRuntime runtime,
   TixNativeBufferUnity dst,
   ulong dst_offset,
-  IntPtr src
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] src
 );
 public static void TixCopyMemoryToNativeBufferAsyncUnity(
   TiRuntime runtime,
@@ -104,15 +332,14 @@ public static void TixCopyMemoryToNativeBufferAsyncUnity(
   ulong dst_offset,
   TiMemorySlice src
 ) {
-  IntPtr hglobal_src = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(src, hglobal_src, false);
+  var arr_src = new TiMemorySlice[1];
+  arr_src[0] = src;
   tix_copy_memory_to_native_buffer_async_unity(
     runtime,
     dst,
     dst_offset,
-    hglobal_src
+    arr_src
   );
-  Marshal.FreeHGlobal(hglobal_src);
 }
 }
 
@@ -127,7 +354,7 @@ private static extern void tix_copy_memory_device_to_host_unity(
   TiRuntime runtime,
   [MarshalAs(UnmanagedType.LPArray)] byte[] dst,
   ulong dst_offset,
-  IntPtr src
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] src
 );
 public static void TixCopyMemoryDeviceToHostUnity(
   TiRuntime runtime,
@@ -135,15 +362,14 @@ public static void TixCopyMemoryDeviceToHostUnity(
   ulong dst_offset,
   TiMemorySlice src
 ) {
-  IntPtr hglobal_src = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(src, hglobal_src, false);
+  var arr_src = new TiMemorySlice[1];
+  arr_src[0] = src;
   tix_copy_memory_device_to_host_unity(
     runtime,
     dst,
     dst_offset,
-    hglobal_src
+    arr_src
   );
-  Marshal.FreeHGlobal(hglobal_src);
 }
 }
 static partial class Ffi {
@@ -156,7 +382,7 @@ private static extern void tix_copy_memory_device_to_host_unity(
   TiRuntime runtime,
   [MarshalAs(UnmanagedType.LPArray)] sbyte[] dst,
   ulong dst_offset,
-  IntPtr src
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] src
 );
 public static void TixCopyMemoryDeviceToHostUnity(
   TiRuntime runtime,
@@ -164,15 +390,14 @@ public static void TixCopyMemoryDeviceToHostUnity(
   ulong dst_offset,
   TiMemorySlice src
 ) {
-  IntPtr hglobal_src = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(src, hglobal_src, false);
+  var arr_src = new TiMemorySlice[1];
+  arr_src[0] = src;
   tix_copy_memory_device_to_host_unity(
     runtime,
     dst,
     dst_offset,
-    hglobal_src
+    arr_src
   );
-  Marshal.FreeHGlobal(hglobal_src);
 }
 }
 static partial class Ffi {
@@ -185,7 +410,7 @@ private static extern void tix_copy_memory_device_to_host_unity(
   TiRuntime runtime,
   [MarshalAs(UnmanagedType.LPArray)] short[] dst,
   ulong dst_offset,
-  IntPtr src
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] src
 );
 public static void TixCopyMemoryDeviceToHostUnity(
   TiRuntime runtime,
@@ -193,15 +418,14 @@ public static void TixCopyMemoryDeviceToHostUnity(
   ulong dst_offset,
   TiMemorySlice src
 ) {
-  IntPtr hglobal_src = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(src, hglobal_src, false);
+  var arr_src = new TiMemorySlice[1];
+  arr_src[0] = src;
   tix_copy_memory_device_to_host_unity(
     runtime,
     dst,
     dst_offset,
-    hglobal_src
+    arr_src
   );
-  Marshal.FreeHGlobal(hglobal_src);
 }
 }
 static partial class Ffi {
@@ -214,7 +438,7 @@ private static extern void tix_copy_memory_device_to_host_unity(
   TiRuntime runtime,
   [MarshalAs(UnmanagedType.LPArray)] ushort[] dst,
   ulong dst_offset,
-  IntPtr src
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] src
 );
 public static void TixCopyMemoryDeviceToHostUnity(
   TiRuntime runtime,
@@ -222,15 +446,14 @@ public static void TixCopyMemoryDeviceToHostUnity(
   ulong dst_offset,
   TiMemorySlice src
 ) {
-  IntPtr hglobal_src = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(src, hglobal_src, false);
+  var arr_src = new TiMemorySlice[1];
+  arr_src[0] = src;
   tix_copy_memory_device_to_host_unity(
     runtime,
     dst,
     dst_offset,
-    hglobal_src
+    arr_src
   );
-  Marshal.FreeHGlobal(hglobal_src);
 }
 }
 static partial class Ffi {
@@ -243,7 +466,7 @@ private static extern void tix_copy_memory_device_to_host_unity(
   TiRuntime runtime,
   [MarshalAs(UnmanagedType.LPArray)] int[] dst,
   ulong dst_offset,
-  IntPtr src
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] src
 );
 public static void TixCopyMemoryDeviceToHostUnity(
   TiRuntime runtime,
@@ -251,15 +474,14 @@ public static void TixCopyMemoryDeviceToHostUnity(
   ulong dst_offset,
   TiMemorySlice src
 ) {
-  IntPtr hglobal_src = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(src, hglobal_src, false);
+  var arr_src = new TiMemorySlice[1];
+  arr_src[0] = src;
   tix_copy_memory_device_to_host_unity(
     runtime,
     dst,
     dst_offset,
-    hglobal_src
+    arr_src
   );
-  Marshal.FreeHGlobal(hglobal_src);
 }
 }
 static partial class Ffi {
@@ -272,7 +494,7 @@ private static extern void tix_copy_memory_device_to_host_unity(
   TiRuntime runtime,
   [MarshalAs(UnmanagedType.LPArray)] uint[] dst,
   ulong dst_offset,
-  IntPtr src
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] src
 );
 public static void TixCopyMemoryDeviceToHostUnity(
   TiRuntime runtime,
@@ -280,15 +502,14 @@ public static void TixCopyMemoryDeviceToHostUnity(
   ulong dst_offset,
   TiMemorySlice src
 ) {
-  IntPtr hglobal_src = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(src, hglobal_src, false);
+  var arr_src = new TiMemorySlice[1];
+  arr_src[0] = src;
   tix_copy_memory_device_to_host_unity(
     runtime,
     dst,
     dst_offset,
-    hglobal_src
+    arr_src
   );
-  Marshal.FreeHGlobal(hglobal_src);
 }
 }
 static partial class Ffi {
@@ -301,7 +522,7 @@ private static extern void tix_copy_memory_device_to_host_unity(
   TiRuntime runtime,
   [MarshalAs(UnmanagedType.LPArray)] long[] dst,
   ulong dst_offset,
-  IntPtr src
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] src
 );
 public static void TixCopyMemoryDeviceToHostUnity(
   TiRuntime runtime,
@@ -309,15 +530,14 @@ public static void TixCopyMemoryDeviceToHostUnity(
   ulong dst_offset,
   TiMemorySlice src
 ) {
-  IntPtr hglobal_src = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(src, hglobal_src, false);
+  var arr_src = new TiMemorySlice[1];
+  arr_src[0] = src;
   tix_copy_memory_device_to_host_unity(
     runtime,
     dst,
     dst_offset,
-    hglobal_src
+    arr_src
   );
-  Marshal.FreeHGlobal(hglobal_src);
 }
 }
 static partial class Ffi {
@@ -330,7 +550,7 @@ private static extern void tix_copy_memory_device_to_host_unity(
   TiRuntime runtime,
   [MarshalAs(UnmanagedType.LPArray)] ulong[] dst,
   ulong dst_offset,
-  IntPtr src
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] src
 );
 public static void TixCopyMemoryDeviceToHostUnity(
   TiRuntime runtime,
@@ -338,15 +558,14 @@ public static void TixCopyMemoryDeviceToHostUnity(
   ulong dst_offset,
   TiMemorySlice src
 ) {
-  IntPtr hglobal_src = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(src, hglobal_src, false);
+  var arr_src = new TiMemorySlice[1];
+  arr_src[0] = src;
   tix_copy_memory_device_to_host_unity(
     runtime,
     dst,
     dst_offset,
-    hglobal_src
+    arr_src
   );
-  Marshal.FreeHGlobal(hglobal_src);
 }
 }
 static partial class Ffi {
@@ -359,7 +578,7 @@ private static extern void tix_copy_memory_device_to_host_unity(
   TiRuntime runtime,
   [MarshalAs(UnmanagedType.LPArray)] IntPtr[] dst,
   ulong dst_offset,
-  IntPtr src
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] src
 );
 public static void TixCopyMemoryDeviceToHostUnity(
   TiRuntime runtime,
@@ -367,15 +586,14 @@ public static void TixCopyMemoryDeviceToHostUnity(
   ulong dst_offset,
   TiMemorySlice src
 ) {
-  IntPtr hglobal_src = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(src, hglobal_src, false);
+  var arr_src = new TiMemorySlice[1];
+  arr_src[0] = src;
   tix_copy_memory_device_to_host_unity(
     runtime,
     dst,
     dst_offset,
-    hglobal_src
+    arr_src
   );
-  Marshal.FreeHGlobal(hglobal_src);
 }
 }
 static partial class Ffi {
@@ -388,7 +606,7 @@ private static extern void tix_copy_memory_device_to_host_unity(
   TiRuntime runtime,
   [MarshalAs(UnmanagedType.LPArray)] float[] dst,
   ulong dst_offset,
-  IntPtr src
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] src
 );
 public static void TixCopyMemoryDeviceToHostUnity(
   TiRuntime runtime,
@@ -396,15 +614,14 @@ public static void TixCopyMemoryDeviceToHostUnity(
   ulong dst_offset,
   TiMemorySlice src
 ) {
-  IntPtr hglobal_src = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(src, hglobal_src, false);
+  var arr_src = new TiMemorySlice[1];
+  arr_src[0] = src;
   tix_copy_memory_device_to_host_unity(
     runtime,
     dst,
     dst_offset,
-    hglobal_src
+    arr_src
   );
-  Marshal.FreeHGlobal(hglobal_src);
 }
 }
 static partial class Ffi {
@@ -417,7 +634,7 @@ private static extern void tix_copy_memory_device_to_host_unity(
   TiRuntime runtime,
   [MarshalAs(UnmanagedType.LPArray)] double[] dst,
   ulong dst_offset,
-  IntPtr src
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] src
 );
 public static void TixCopyMemoryDeviceToHostUnity(
   TiRuntime runtime,
@@ -425,15 +642,14 @@ public static void TixCopyMemoryDeviceToHostUnity(
   ulong dst_offset,
   TiMemorySlice src
 ) {
-  IntPtr hglobal_src = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(src, hglobal_src, false);
+  var arr_src = new TiMemorySlice[1];
+  arr_src[0] = src;
   tix_copy_memory_device_to_host_unity(
     runtime,
     dst,
     dst_offset,
-    hglobal_src
+    arr_src
   );
-  Marshal.FreeHGlobal(hglobal_src);
 }
 }
 
@@ -446,7 +662,7 @@ static partial class Ffi {
 #endif
 private static extern void tix_copy_memory_host_to_device_unity(
   TiRuntime runtime,
-  IntPtr dst,
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] dst,
   [MarshalAs(UnmanagedType.LPArray)] byte[] src,
   ulong src_offset
 );
@@ -456,15 +672,14 @@ public static void TixCopyMemoryHostToDeviceUnity(
   byte[] src,
   ulong src_offset
 ) {
-  IntPtr hglobal_dst = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(dst, hglobal_dst, false);
+  var arr_dst = new TiMemorySlice[1];
+  arr_dst[0] = dst;
   tix_copy_memory_host_to_device_unity(
     runtime,
-    hglobal_dst,
+    arr_dst,
     src,
     src_offset
   );
-  Marshal.FreeHGlobal(hglobal_dst);
 }
 }
 static partial class Ffi {
@@ -475,7 +690,7 @@ static partial class Ffi {
 #endif
 private static extern void tix_copy_memory_host_to_device_unity(
   TiRuntime runtime,
-  IntPtr dst,
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] dst,
   [MarshalAs(UnmanagedType.LPArray)] sbyte[] src,
   ulong src_offset
 );
@@ -485,15 +700,14 @@ public static void TixCopyMemoryHostToDeviceUnity(
   sbyte[] src,
   ulong src_offset
 ) {
-  IntPtr hglobal_dst = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(dst, hglobal_dst, false);
+  var arr_dst = new TiMemorySlice[1];
+  arr_dst[0] = dst;
   tix_copy_memory_host_to_device_unity(
     runtime,
-    hglobal_dst,
+    arr_dst,
     src,
     src_offset
   );
-  Marshal.FreeHGlobal(hglobal_dst);
 }
 }
 static partial class Ffi {
@@ -504,7 +718,7 @@ static partial class Ffi {
 #endif
 private static extern void tix_copy_memory_host_to_device_unity(
   TiRuntime runtime,
-  IntPtr dst,
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] dst,
   [MarshalAs(UnmanagedType.LPArray)] short[] src,
   ulong src_offset
 );
@@ -514,15 +728,14 @@ public static void TixCopyMemoryHostToDeviceUnity(
   short[] src,
   ulong src_offset
 ) {
-  IntPtr hglobal_dst = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(dst, hglobal_dst, false);
+  var arr_dst = new TiMemorySlice[1];
+  arr_dst[0] = dst;
   tix_copy_memory_host_to_device_unity(
     runtime,
-    hglobal_dst,
+    arr_dst,
     src,
     src_offset
   );
-  Marshal.FreeHGlobal(hglobal_dst);
 }
 }
 static partial class Ffi {
@@ -533,7 +746,7 @@ static partial class Ffi {
 #endif
 private static extern void tix_copy_memory_host_to_device_unity(
   TiRuntime runtime,
-  IntPtr dst,
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] dst,
   [MarshalAs(UnmanagedType.LPArray)] ushort[] src,
   ulong src_offset
 );
@@ -543,15 +756,14 @@ public static void TixCopyMemoryHostToDeviceUnity(
   ushort[] src,
   ulong src_offset
 ) {
-  IntPtr hglobal_dst = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(dst, hglobal_dst, false);
+  var arr_dst = new TiMemorySlice[1];
+  arr_dst[0] = dst;
   tix_copy_memory_host_to_device_unity(
     runtime,
-    hglobal_dst,
+    arr_dst,
     src,
     src_offset
   );
-  Marshal.FreeHGlobal(hglobal_dst);
 }
 }
 static partial class Ffi {
@@ -562,7 +774,7 @@ static partial class Ffi {
 #endif
 private static extern void tix_copy_memory_host_to_device_unity(
   TiRuntime runtime,
-  IntPtr dst,
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] dst,
   [MarshalAs(UnmanagedType.LPArray)] int[] src,
   ulong src_offset
 );
@@ -572,15 +784,14 @@ public static void TixCopyMemoryHostToDeviceUnity(
   int[] src,
   ulong src_offset
 ) {
-  IntPtr hglobal_dst = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(dst, hglobal_dst, false);
+  var arr_dst = new TiMemorySlice[1];
+  arr_dst[0] = dst;
   tix_copy_memory_host_to_device_unity(
     runtime,
-    hglobal_dst,
+    arr_dst,
     src,
     src_offset
   );
-  Marshal.FreeHGlobal(hglobal_dst);
 }
 }
 static partial class Ffi {
@@ -591,7 +802,7 @@ static partial class Ffi {
 #endif
 private static extern void tix_copy_memory_host_to_device_unity(
   TiRuntime runtime,
-  IntPtr dst,
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] dst,
   [MarshalAs(UnmanagedType.LPArray)] uint[] src,
   ulong src_offset
 );
@@ -601,15 +812,14 @@ public static void TixCopyMemoryHostToDeviceUnity(
   uint[] src,
   ulong src_offset
 ) {
-  IntPtr hglobal_dst = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(dst, hglobal_dst, false);
+  var arr_dst = new TiMemorySlice[1];
+  arr_dst[0] = dst;
   tix_copy_memory_host_to_device_unity(
     runtime,
-    hglobal_dst,
+    arr_dst,
     src,
     src_offset
   );
-  Marshal.FreeHGlobal(hglobal_dst);
 }
 }
 static partial class Ffi {
@@ -620,7 +830,7 @@ static partial class Ffi {
 #endif
 private static extern void tix_copy_memory_host_to_device_unity(
   TiRuntime runtime,
-  IntPtr dst,
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] dst,
   [MarshalAs(UnmanagedType.LPArray)] long[] src,
   ulong src_offset
 );
@@ -630,15 +840,14 @@ public static void TixCopyMemoryHostToDeviceUnity(
   long[] src,
   ulong src_offset
 ) {
-  IntPtr hglobal_dst = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(dst, hglobal_dst, false);
+  var arr_dst = new TiMemorySlice[1];
+  arr_dst[0] = dst;
   tix_copy_memory_host_to_device_unity(
     runtime,
-    hglobal_dst,
+    arr_dst,
     src,
     src_offset
   );
-  Marshal.FreeHGlobal(hglobal_dst);
 }
 }
 static partial class Ffi {
@@ -649,7 +858,7 @@ static partial class Ffi {
 #endif
 private static extern void tix_copy_memory_host_to_device_unity(
   TiRuntime runtime,
-  IntPtr dst,
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] dst,
   [MarshalAs(UnmanagedType.LPArray)] ulong[] src,
   ulong src_offset
 );
@@ -659,15 +868,14 @@ public static void TixCopyMemoryHostToDeviceUnity(
   ulong[] src,
   ulong src_offset
 ) {
-  IntPtr hglobal_dst = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(dst, hglobal_dst, false);
+  var arr_dst = new TiMemorySlice[1];
+  arr_dst[0] = dst;
   tix_copy_memory_host_to_device_unity(
     runtime,
-    hglobal_dst,
+    arr_dst,
     src,
     src_offset
   );
-  Marshal.FreeHGlobal(hglobal_dst);
 }
 }
 static partial class Ffi {
@@ -678,7 +886,7 @@ static partial class Ffi {
 #endif
 private static extern void tix_copy_memory_host_to_device_unity(
   TiRuntime runtime,
-  IntPtr dst,
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] dst,
   [MarshalAs(UnmanagedType.LPArray)] IntPtr[] src,
   ulong src_offset
 );
@@ -688,15 +896,14 @@ public static void TixCopyMemoryHostToDeviceUnity(
   IntPtr[] src,
   ulong src_offset
 ) {
-  IntPtr hglobal_dst = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(dst, hglobal_dst, false);
+  var arr_dst = new TiMemorySlice[1];
+  arr_dst[0] = dst;
   tix_copy_memory_host_to_device_unity(
     runtime,
-    hglobal_dst,
+    arr_dst,
     src,
     src_offset
   );
-  Marshal.FreeHGlobal(hglobal_dst);
 }
 }
 static partial class Ffi {
@@ -707,7 +914,7 @@ static partial class Ffi {
 #endif
 private static extern void tix_copy_memory_host_to_device_unity(
   TiRuntime runtime,
-  IntPtr dst,
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] dst,
   [MarshalAs(UnmanagedType.LPArray)] float[] src,
   ulong src_offset
 );
@@ -717,15 +924,14 @@ public static void TixCopyMemoryHostToDeviceUnity(
   float[] src,
   ulong src_offset
 ) {
-  IntPtr hglobal_dst = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(dst, hglobal_dst, false);
+  var arr_dst = new TiMemorySlice[1];
+  arr_dst[0] = dst;
   tix_copy_memory_host_to_device_unity(
     runtime,
-    hglobal_dst,
+    arr_dst,
     src,
     src_offset
   );
-  Marshal.FreeHGlobal(hglobal_dst);
 }
 }
 static partial class Ffi {
@@ -736,7 +942,7 @@ static partial class Ffi {
 #endif
 private static extern void tix_copy_memory_host_to_device_unity(
   TiRuntime runtime,
-  IntPtr dst,
+  [MarshalAs(UnmanagedType.LPArray)] TiMemorySlice[] dst,
   [MarshalAs(UnmanagedType.LPArray)] double[] src,
   ulong src_offset
 );
@@ -746,15 +952,14 @@ public static void TixCopyMemoryHostToDeviceUnity(
   double[] src,
   ulong src_offset
 ) {
-  IntPtr hglobal_dst = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(TiMemorySlice)));
-  Marshal.StructureToPtr(dst, hglobal_dst, false);
+  var arr_dst = new TiMemorySlice[1];
+  arr_dst[0] = dst;
   tix_copy_memory_host_to_device_unity(
     runtime,
-    hglobal_dst,
+    arr_dst,
     src,
     src_offset
   );
-  Marshal.FreeHGlobal(hglobal_dst);
 }
 }
 
@@ -778,4 +983,4 @@ public static IntPtr TixSubmitAsyncUnity(
 }
 }
 
-} // namespace Taichi
+} // namespace Taichi.Generated
